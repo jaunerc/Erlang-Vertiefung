@@ -1,0 +1,12 @@
+1> c(hcs).
+{ok,hcs}
+2> Service = hcs:link_with(self()).
+<0.66.0>
+3> Service ! {price, milk}.
+The price of milk is: $1.03 
+{price,milk}
+4> c(hcs).                         
+{ok,hcs}
+5> Service ! {price, milk}.
+The price of milk is: $0.99 
+{price,milk}
