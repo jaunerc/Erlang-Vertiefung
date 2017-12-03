@@ -1,5 +1,5 @@
 -module(ueb).
--export([fib/1, io_fb/0]).
+-export([fib/1, io_fb/0, diagonal_rectangle/2, redoubler/1]).
 
 
 %*************************************************
@@ -21,3 +21,22 @@ io_fb() ->
   {ok, [N]} = io:fread("Gib eine Zahl ein: ", "~d"),
   F = fib(N),
   io:fwrite("Die ~p Fibonacci Zahl ist ~p ~n", [N, F]).
+
+
+%*************************************************
+%   Uebung 05 - Aufgabe 03
+%*************************************************
+% diagonal_rectangle/2
+% Returns the length of the rectangles diagonal.
+diagonal_rectangle(Length, Width) ->
+  math:sqrt(math:pow(Length, 2) + math:pow(Width, 2)).
+
+
+%*************************************************
+%   Uebung 06 - Aufgabe 02
+%*************************************************
+% redoubler/1
+% Multiplies each number from a list of numbers with a random factor.
+redoubler(List) ->
+  Factor = rand:uniform(100),
+  [X * Factor || X <- List].
