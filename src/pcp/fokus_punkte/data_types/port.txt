@@ -1,0 +1,7 @@
+9> port:start().
+<0.69.0>
+10> server opened socket:#Port<0.580>
+10> port:client("Hallo").
+client opened socket=#Port<0.581>
+server received:<<"Hallo">>
+client received:<<"Hallo">>

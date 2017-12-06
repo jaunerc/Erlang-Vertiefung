@@ -1,0 +1,21 @@
+%% Definition einer Map
+4> M1 = #{name=>john,age=>25}.
+#{age => 25,name => john}
+
+%% Werte abgreifen, hinzufügen und löschen
+5> maps:get(name, M1).
+john
+6> maps:put(gender, male, M1).
+#{age => 25,gender => male,name => john}
+7> maps:remove(age, M1).
+#{name => john}
+
+%% Dadurch wird die Map nicht verändert
+8> M1.
+#{age => 25,name => john}
+
+%% Das Resultat kann in einer Variable gespeichert werden, jedoch nicht in M1 -> Pattern Matching
+9> M2 = maps:remove(age, M1).
+#{name => john}
+10> M1 = maps:remove(age, M1).
+** exception error: no match of right hand side value #{name => john}

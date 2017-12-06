@@ -1,0 +1,3 @@
+%% Listen werden gleich wie in Prolog behandelt
+1> lists:reverse([1, 3, 3, 7]).
+[7,3,3,1]
